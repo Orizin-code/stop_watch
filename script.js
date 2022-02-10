@@ -13,11 +13,13 @@ const resetButton = document.getElementById('reset')
 startStopButton.onclick = () => {
   if (startStopButton.innerText === 'スタート') {
     // 1秒(1000ミリ秒)ごとに addSecond 関数を呼び出す
-    setInterval(addSecond, 1000)
+    timer = setInterval(addSecond, 1000)
 
     // 「スタート」ボタンを「ストップ」ボタンに変更
     startStopButton.innerText = 'ストップ'
   } else {
+    // 1秒ごとにディスプレイの数値が1増える処理を終了させる
+    clearInterval(timer)
     // 「ストップ」ボタンを「スタート」ボタンに変更
     startStopButton.innerText = 'スタート'
   }
