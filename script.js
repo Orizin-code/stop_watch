@@ -32,3 +32,10 @@ const addSecond = () => {
   // 秒数をディスプレイに反映
   display.innerText = seconds
 }
+
+// 「リセット」ボタンがクリックされたとき
+resetButton.onclick = () => {
+  display.innerText = seconds = 0
+  clearInterval(timer)
+  startStopButton.innerText = 'スタート'
+}
